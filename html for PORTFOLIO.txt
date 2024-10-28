@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1 id="user-name">Your Name</h1>
+    <h2 id="job-title">Your Job Title</h2>
+  </header>
+  
+  <section class="about">
+    <h3>About Me</h3>
+    <p id="user-bio">This is a short bio about yourself. You can update it anytime!</p>
+  </section>
+
+  <section class="projects">
+    <h3>My Projects</h3>
+    <ul id="projects-list">
+      <li>Project 1</li>
+      <li>Project 2</li>
+      <li>Project 3</li>
+    </ul>
+  </section>
+
+  <section class="update-form">
+    <h3>Update Your Details</h3>
+    <form id="update-details-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Enter your name"><br>
+
+      <label for="job">Job Title:</label>
+      <input type="text" id="job" placeholder="Enter your job title"><br>
+
+      <label for="bio">Bio:</label>
+      <textarea id="bio" placeholder="Write something about yourself"></textarea><br>
+
+      <label for="project">Add a Project:</label>
+      <input type="text" id="project" placeholder="Enter project name"><br>
+
+      <button type="button" id="update-btn">Update</button>
+    </form>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

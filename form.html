@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Removal Request</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        h2 {
+            text-align: center;
+            color: #b92f2f;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 50%;
+            margin-left: 27%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .note {
+            font-size: 0.9em;
+            color: #555;
+            text-align: center;
+        }
+        a{
+            text-decoration: none;
+            margin-left: 35%;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="b">
+    <div class="form-container">
+        <h2>Account Removal Request</h2>
+        <form id="removalForm">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email address">
+
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required placeholder="Enter your username">
+
+            <label for="reason">Reason for Account Removal</label>
+            <textarea id="reason" name="reason" rows="4" placeholder="Please provide the reason for account removal (optional)"></textarea>
+
+            <button type="submit">Submit Request</button>
+        </form>
+        <p class="note">Note: Account removal requests may take up to 7 business days to process.</p>
+    </div>
+    <a href="index.html">Back to Home Page</a>
+</div>
+    <!-- Firebase App (the core Firebase SDK) -->
+    <script src="https://www.gstatic.com/firebasejs/9.17.0/firebase-app.js"></script>
+
+    <!-- Firebase Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/9.17.0/firebase-firestore.js"></script>
+
+    
+        <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyC-fJWpMn4wOoGNMi2H6Q6patUz_L5C8x8",
+    authDomain: "nexoin-webpage.firebaseapp.com",
+    projectId: "nexoin-webpage",
+    storageBucket: "nexoin-webpage.appspot.com",
+    messagingSenderId: "935502804688",
+    appId: "1:935502804688:web:4d785d8664912bd8d410d5",
+    measurementId: "G-BDNQZ05C34"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+
+
+        // Initialize Firestore
+        const db = firebase.firestore(app);
+
+        // Handle form submission
+        document.getElementById('removalForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const username = document.getElementById('username').value;
+            const reason = document.getElementById('reason').value;
+
+            try {
+                // Add the form data to Firestore
+                await db.collection('account-removal-requests').add({
+                    email: email,
+                    username: username,
+                    reason: reason,
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                });
+
+                alert('Your account removal request has been submitted successfully.');
+                // Reset the form
+                document.getElementById('removalForm').reset();
+            } catch (error) {
+                console.error('Error submitting form: ', error);
+                alert('There was an error submitting your request. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>

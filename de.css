@@ -1,0 +1,29 @@
+
+h1{
+    text-align: center;
+    color:blue;
+    font-weight: bolder;
+}
+img{
+    height: 100%;
+    width: 100%;
+}
+
+.row1{
+    border: 1px solid red;
+    height: 25rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.pic{
+    height: 100%;
+    border: 3px solid green;
+    width: 30%;
+}
+@media (max-width:768px){
+    .row1{
+        height: 10rem;
+    }
+}
