@@ -249,6 +249,9 @@ footer {
         width: 100%;
         margin-bottom: 20px;
     }
+    #hero{
+         width : 100%;
+    }
 
     .hero h1 {
         font-size: 2rem;
@@ -262,9 +265,8 @@ footer {
         visibility: hidden;
     }
     .agl{
-        position: relative;
-        margin-left: 8rem;
-        margin-top: 2rem;
+        margin-top : 2rem;
+        margin-left : 15%;
     }
     #logo{
         margin-left: 8px;
