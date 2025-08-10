@@ -35,6 +35,102 @@ header {
     align-items: center;
     border-radius: 4px;
 }
+    /* GOR AGL */
+
+    .agla {
+    font-size: 2.5rem;
+    color: #22127e;
+    text-align: center;
+    margin-top: 5rem;
+    padding: 0px;
+    font-weight: bold;
+    margin-bottom: 0%;
+}
+ h5 {
+    font-size: 1.7rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.agls {
+    margin-top: 2rem;
+    width: 95%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+.agl-pre {
+    width: 45%;
+    height: 100%;
+    padding: 20px;
+    color: #fff;
+    font-size: 1.5rem;
+}
+.agl-img {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}   
+.agl-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.h_h {
+    font-size: 3.5rem;
+    color: #22127e;
+    text-align: center;
+    margin-top: 2.4rem;
+    margin-bottom: 2.4rem;
+}
+.piics {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+.po {
+    width: 20%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: transform 0.3s;
+}
+.po:hover {
+    transform: scale(1.05);
+}
+  .i {
+    width: 70%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    margin-left: 15%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+.cont{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+
 .head {
     width: 30%;
     display: flex;
@@ -204,11 +300,50 @@ footer {
         flex-direction: column;
         align-items: center;
     }
+    .agla {
+        font-size: 2rem;
+        margin-top: 6rem;
+    }
     .gallery {
         width: 100%;
         justify-content: space-evenly;
         margin: 0px;
         height: 40px;
+    }
+    
+    .piics {
+        flex-direction: column;
+        align-items: center;
+    }
+    .po {
+        border-radius: 15px;
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .agls {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        margin-top: 1rem;
+    }
+    .agl-pre {
+        width: 100%;
+        height: 15rem;
+        margin-top: 2rem;
+        padding: 10px;
+        font-size: 1.2rem;
+    }
+    .agl-img img {
+        width: 100%;
+        height: 13rem;
+        object-fit: cover;
+        border-radius: 10px;
+        visibility: hidden;
+    }
+    .cont {
+        font-size: 1.2rem;
+        text-align: center;
     }
     .head {
         width: 100%;
